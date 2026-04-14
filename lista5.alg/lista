@@ -1,0 +1,201 @@
+//------------ EXERCICIO 1 ----------//
+ algoritmo "multiplos"
+var
+   i: inteiro
+inicio
+   escreval("--- Múltiplos de 3 (3 a 30) ---")
+   para i de 3 ate 30 passo 3 faca
+      escreva(i, " ")
+   fimpara
+fimalgoritmo
+
+//--------- EXERCICIO 2 -------------//
+algoritmo "pares_1_20"
+
+ 
+
+var
+
+  i: inteiro
+
+ 
+
+inicio
+
+ 
+
+  para i de 1 ate 20 faca
+
+      escreval(i)
+
+  fimpara
+
+fimalgoritmo
+//------------- EXERCICIO 3 -------------//
+algoritmo "CalcularFatorial"
+
+ 
+
+var
+
+   // n: número digitado pelo usuário
+
+   // i: contador para o laço
+
+   // fat: variável para armazenar o resultado acumulado
+
+   n, i, fat: inteiro
+
+ 
+
+inicio
+
+   Escreva("Digite um valor inteiro e positivo: ")
+
+   Leia(n)
+
+ 
+
+   // Inicializamos 'fat' com 1, pois é o elemento neutro da multiplicação
+
+   fat <- 1
+
+ 
+
+   // Se o usuário digitar 0, o fatorial é 1 por definição.
+
+   // O laço Para só executará se n for maior ou igual a 1.
+
+   para i de 1 ate n faca
+
+      fat <- fat * i
+
+   fimpara
+
+ 
+
+   Escreval("O fatorial de ", n, " é: ", fat)
+
+ 
+
+fimalgoritmo
+//---------- EXERCICIO 4 --------------//
+algoritmo "conceito_alunos"
+
+ 
+
+var
+
+  i: inteiro
+
+  nota: real
+
+ 
+
+inicio
+
+ 
+
+  para i de 1 ate 10 faca
+
+  leia(nota)
+
+ 
+
+   se nota >= 0 e nota <= 2.9 entao
+
+      escreval("E")
+
+      senao se nota <= 4.9 entao
+
+      escreva("D")
+
+      senao se nota <= 6.9 entao
+
+      escreva("C")
+
+      senao se nota <= 8.9 entao
+
+      escreva("B")
+
+      senao
+
+      escreva("A")
+
+      fimse
+
+      fimse
+
+      fimse
+
+      fimse
+
+  fimpara
+
+fimalgoritmo
+
+//----------- EXERCICIO 5 ------------//
+algoritmo "classificacao_alunos_estatistica"
+
+var
+   // Variáveis de entrada e loop
+   nota, percE : real
+   codigo, i : inteiro
+   conceito : caractere
+   
+   // Contadores para as estatísticas (Questão 5)
+   contD, contAB, contE : inteiro
+
+inicio
+   // Inicializando os contadores
+   contD <- 0
+   contAB <- 0
+   contE <- 0
+
+   // Loop para processar os 10 alunos
+   para i de 1 ate 10 faca
+      Escreval("--- Aluno ", i, " ---")
+      Escreva("Digite o código do aluno: ")
+      Leia(codigo)
+      Escreva("Digite a nota final: ")
+      Leia(nota)
+
+      // Estrutura condicional para definir o conceito (Questão 4)
+      se (nota >= 0.0) e (nota <= 2.9) entao
+         conceito <- "E"
+         contE <- contE + 1  // Estatística item C
+      senao
+         se (nota >= 3.0) e (nota <= 4.9) entao
+            conceito <- "D"
+            contD <- contD + 1  // Estatística item A
+         senao
+            se (nota >= 5.0) e (nota <= 6.9) entao
+               conceito <- "C"
+            senao
+               se (nota >= 7.0) e (nota <= 8.9) entao
+                  conceito <- "B"
+                  contAB <- contAB + 1 // Estatística item B
+               senao
+                  se (nota >= 9.0) e (nota <= 10.0) entao
+                     conceito <- "A"
+                     contAB <- contAB + 1 // Estatística item B
+                  fimse
+               fimse
+            fimse
+         fimse
+      fimse
+
+      Escreval("O aluno de código ", codigo, " obteve o conceito: ", conceito)
+      Escreval("")
+fimpara
+
+   // Cálculos finais (Questão 5)
+   percE <- (contE / 10) * 100
+
+   // Exibição dos resultados estatísticos
+   Escreval("========== RESULTADO FINAL ==========")
+   Escreval("A. Quantidade de alunos com conceito D: ", contD)
+   Escreval("B. Quantidade de alunos com conceito A ou B: ", contAB)
+   Escreval("C. Percentual de alunos com conceito E: ", percE, "%")
+
+fimalgoritmo

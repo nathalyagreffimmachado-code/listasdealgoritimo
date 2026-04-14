@@ -1,0 +1,300 @@
+
+algoritmo "idade"
+ 
+var
+  anoNascimento, idade: inteiro
+ 
+inicio
+ 
+  escreval("Digite o ano de nascimento:")
+  leia(anoNascimento)
+ 
+  idade <- 2026 - anoNascimento
+  escreva("idade:, ", idade)
+ 
+  se idade >= 16 entao
+   escreva("pode votar")
+  senao
+   escreva("não pode votar")
+  fimse
+ 
+  se idade >= 18 entao
+   escreva("pode tirar cnh")
+  fimse
+ 
+fimalgoritmo
+
+//------------------------EXERCICIO 2 ----------------//
+algoritmo "calculadora"
+ 
+var
+  n1, n2, resultado: real
+  op: caractere
+ 
+inicio
+ 
+  escreval("Digite o primeiro numero:")
+  leia(n1)
+ 
+  escreval("Digite o segundo numero:")
+  leia(n2)
+ 
+  escreval("Digite a operacao (+,-, *, /):")
+  leia(op)
+ 
+  se op = "+" entao
+    resultado <- n1 + n2
+  senao
+    se op = "-" entao
+      resultado <- n1-n2
+    senao
+      se op = "*"entao
+        resultado <- n1*n2
+      senao
+        se op ="/" entao
+          resultado <-n1/n2
+        senao
+          escreval("operacao invalida")
+        fimse
+      fimse
+    fimse
+  fimse
+  escreval("Resultado:", resultado)
+ 
+fimalgoritmo
+
+//----------------EXERCICIO 3----------------//
+algoritmo "imc"
+ 
+var
+  peso, altura, imc: real
+inicio
+ 
+  escreval("Digite seu peso:")
+  leia(peso)
+ 
+  escreval("Digite sua altura:")
+  leia(altura)
+ 
+  imc <- peso / (altura * altura)
+ 
+  escreva("imc:", imc)
+ 
+  se imc < 18.5 entao
+    escreva("abaixo do peso")
+  senao se imc < 25 entao
+    escreva("peso normal")
+  senao se imc < 30 entao
+    escreva("acima do peso")
+  senao
+    escreva("obeso")
+  fimse
+fimse
+fimse
+fimalgoritmo
+//------------------- EXERCICIO 4 -----------------------------//
+algoritimo "produto"
+
+Algoritmo "calculo_pagamento"
+
+Var
+   preco, total: real
+   codigo: inteiro
+
+Inicio
+
+   escreval("Digite o preço do produto: ")
+   leia(preco)
+
+   escreval("Escolha a condição de pagamento:")
+   escreval("1 - À vista em dinheiro/PIX (10% de desconto)")
+   escreval("2 - À vista no cartão (5% de desconto)")
+   escreval("3 - Em 2x (preço normal)")
+   escreval("4 - Em 3x ou mais (20% de acréscimo)")
+
+   leia(codigo)
+
+   se (codigo = 1) entao
+      total <- preco - (preco * 0.10)
+   senao
+      se (codigo = 2) entao
+         total <- preco - (preco * 0.05)
+      senao
+         se (codigo = 3) entao
+            total <- preco
+         senao
+            se (codigo = 4) entao
+               total <- preco + (preco * 0.20)
+            senao
+               escreval("Código inválido!")
+            fimse
+         fimse
+      fimse
+   fimse
+
+   escreval("Valor final a pagar: R$ ", total:0:2)
+
+Fimalgoritmo
+//-------------------EXERCICIO 5 --------------------//
+Algoritmo "nadador"
+Var
+   idade: inteiro
+Inicio
+   Escreva("Digite a idade: ")
+   Leia(idade)
+
+   Se (idade >= 5 E idade <= 7) Entao
+      Escreva("Infantil A")
+   Senao
+      Se (idade <= 10) Entao
+         Escreva("Infantil B")
+      Senao
+         Se (idade <= 13) Entao
+            Escreva("Juvenil A")
+         Senao
+            Se (idade <= 17) Entao
+               Escreva("Juvenil B")
+            Senao
+               Escreva("Adulto")
+            FimSe
+         FimSe
+      FimSe
+   FimSe
+
+Fimalgoritmo
+//---------------------EXERCICIO 6----------------//
+Algoritmo "investimento"
+Var
+   tipo: inteiro
+   valor, rendimento, total: real
+Inicio
+   Escreva("Digite o tipo de investimento (1-Poupança / 2-Renda Fixa): ")
+   Leia(tipo)
+ 
+   Escreva("Digite o valor: ")
+   Leia(valor)
+ 
+   Se (tipo = 1) Entao
+      rendimento <- 0.03
+   Senao Se (tipo = 2) Entao
+      rendimento <- 0.04
+   Senao
+      Escreva("Tipo inválido")
+      Pare
+   FimSe
+ 
+   total <- valor + (valor * rendimento)
+ 
+   Escreva("Valor corrigido: ", total)
+FimAlgoritmo
+//-----------------------EXERCICIO 7-----------//
+Algoritmo "grupo_risco"
+Var
+   idade: inteiro
+   peso: real
+Inicio
+   Escreva("Digite a idade: ")
+   Leia(idade)
+ 
+   Escreva("Digite o peso: ")
+   Leia(peso)
+ 
+   Se (idade < 20) Entao
+      Se (peso <= 60) Entao
+         Escreva("Grupo de risco: 9")
+      Senao Se (peso <= 90) Entao
+         Escreva("Grupo de risco: 8")
+      Senao
+         Escreva("Grupo de risco: 7")
+      FimSe
+ 
+   Senao Se (idade <= 50) Entao
+      Se (peso <= 60) Entao
+         Escreva("Grupo de risco: 6")
+      Senao Se (peso <= 90) Entao
+         Escreva("Grupo de risco: 5")
+      Senao
+         Escreva("Grupo de risco: 4")
+      FimSe
+ 
+   Senao
+      Se (peso <= 60) Entao
+         Escreva("Grupo de risco: 3")
+      Senao Se (peso <= 90) Entao
+         Escreva("Grupo de risco: 2")
+      Senao
+         Escreva("Grupo de risco: 1")
+      FimSe
+   FimSe
+FimAlgoritmo
+
+/----------------EXERCICIO 8---------------/
+Algoritmo "reajuste"
+Var
+   salario, novoSalario: real
+Inicio
+   Escreva("Digite o salário: ")
+   Leia(salario)
+ 
+   Se (salario <= 300) Entao
+      novoSalario <- salario * 1.35
+   Senao
+      novoSalario <- salario * 1.15
+   FimSe
+ 
+   Escreva("Novo salário: ", novoSalario)
+FimAlgoritmo
+//-------------- EXERCICIO 9-----------//
+Algoritmo "operacoes"
+Var
+   n1, n2, resultado: real
+   opcao: inteiro
+Inicio
+   Escreva("Digite o primeiro número: ")
+   Leia(n1)
+ 
+   Escreva("Digite o segundo número: ")
+   Leia(n2)
+ 
+   Escreva("Escolha a operação:")
+   Escreva("1 - Média")
+   Escreva("2 - Soma")
+   Escreva("3 - Produto")
+   Leia(opcao)
+ 
+   Escolha opcao
+      Caso 1
+         resultado <- (n1 + n2) / 2
+      Caso 2
+         resultado <- n1 + n2
+      Caso 3
+         resultado <- n1 * n2
+      OutroCaso
+         Escreva("Erro: opção inválida")
+         Pare
+   FimEscolha
+ 
+   Escreva("Resultado: ", resultado)
+FimAlgoritmo
+//---------------exercicio 10------------------//
+Algoritmo "aumento_salario"
+Var
+   salario, aumento, novoSalario: real
+Inicio
+   Escreva("Digite o salário atual: ")
+   Leia(salario)
+ 
+   Se (salario <= 300) Entao
+      aumento <- 0.15
+   Senao Se (salario <= 600) Entao
+      aumento <- 0.10
+   Senao Se (salario <= 900) Entao
+      aumento <- 0.05
+   Senao
+      aumento <- 0
+   FimSe
+ 
+   novoSalario <- salario + (salario * aumento)
+ 
+   Escreva("Novo salário: ", novoSalario)
+FimAlgoritmo
