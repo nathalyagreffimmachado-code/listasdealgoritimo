@@ -199,3 +199,120 @@ fimpara
    Escreval("C. Percentual de alunos com conceito E: ", percE, "%")
 
 fimalgoritmo
+//---------- EXERCICIO 6 ------------//
+algoritmo "futebol"
+
+ 
+
+var
+  idade, contMenor18, contJogadores, contPeso80:
+  inteiro 
+  peso, altura, somaIdade, somaAltura:real
+
+ 
+
+inicio
+contMenor18 <- 0
+contJogadores <- 0
+contPeso80 <- 0
+somaIdade <- 0
+somaAltura <- 0
+
+ 
+
+leia(idade)
+  enquanto idade <> 0 faca
+  leia(peso)
+  leia(altura)
+
+ 
+
+  contJogadores <- contJogadores + 1
+  somaIdade <- somaIdade + somaIdade
+  somaAltura <- somaAltura + altura
+
+ 
+
+  se idade < 18 entao
+  contMenor18 <- contMenor18 +1
+  fimse
+
+ 
+
+  leia(idade)
+  fimenquanto
+
+  escreva("menores de 18: ", contMenor18)
+  escreva("media idade: ", somaIdade/contJogadores)
+  escreva("media altura: ", somaAltura/contJogadores)
+  escreva("mais de 80kg: ", contPeso80)
+fimalgoritmo
+//------------ EXERCICIO 7 --------------//
+algoritmo "Estatisticas_Transito_Para"
+
+var
+    // Variáveis de controle e entrada
+    codigo, veiculos, acidentes, total_cidades, i: inteiro
+    maior_indice: inteiro
+    
+    // Variáveis de soma e média
+    soma_veiculos, soma_acid_pequenas, qtd_cidades_pequenas: real
+    media_veiculos, media_acid_pequenas: real
+
+inicio
+    // Inicialização das variáveis
+    soma_veiculos <- 0
+    soma_acid_pequenas <- 0
+    qtd_cidades_pequenas <- 0
+    maior_indice <- -1 
+
+    escreva("Quantas cidades deseja cadastrar? ")
+    leia(total_cidades)
+
+    // O laço PARA substitui o ENQUANTO
+    // Ele vai rodar de 1 até o número total de cidades informado
+    para i de 1 ate total_cidades faca
+        escreval("--- Dados da Cidade ", i, " ---")
+        escreva("Digite o código da cidade: ")
+        leia(codigo)
+        escreva("Número de veículos de passeio: ")
+        leia(veiculos)
+        escreva("Número de acidentes com vítimas: ")
+        leia(acidentes)
+
+        // Soma total de veículos para a média (Item B)
+        soma_veiculos <- soma_veiculos + veiculos
+
+        // Verifica o maior índice (Item A)
+        se (acidentes > maior_indice) entao
+            maior_indice <- acidentes
+        fimse
+
+        // Verifica cidades pequenas (Item C)
+        se (veiculos < 2000) entao
+            soma_acid_pequenas <- soma_acid_pequenas + acidentes
+            qtd_cidades_pequenas <- qtd_cidades_pequenas + 1
+        fimse
+        
+        escreval("------------------------------")
+    fimpara
+
+    // Exibição dos resultados finais
+    se (total_cidades > 0) entao
+        escreval("========== RESULTADOS ==========")
+        escreval("A. Maior índice de acidentes: ", maior_indice)
+        
+        media_veiculos <- soma_veiculos / total_cidades
+        escreval("B. Média de veículos das cidades: ", media_veiculos:2:1)
+
+        se (qtd_cidades_pequenas > 0) entao
+            media_acid_pequenas <- soma_acid_pequenas / qtd_cidades_pequenas
+            escreval("C. Média de acidentes em cidades pequenas (<2000 veículos): ", media_acid_pequenas:2:1)
+        senao
+            escreval("C. Nenhuma cidade com menos de 2000 veículos foi registrada.")
+        fimse
+    senao
+        escreval("Nenhuma cidade foi cadastrada.")
+    fimse
+
+fimalgoritmo
