@@ -1,0 +1,105 @@
+algoritmo "Soma de Matrizes 5x3"
+var
+   A, B, C: vetor [1..5, 1..3] de inteiro
+   i, j: inteiro
+inicio
+   // Entrada de dados para Matriz A e B
+   para i de 1 ate 5 faca
+      para j de 1 ate 3 faca
+         escreva("Digite o valor de A[", i, ",", j, "]: ")
+         leia(A[i, j])
+         escreva("Digite o valor de B[", i, ",", j, "]: ")
+         leia(B[i, j])
+         
+         // Processamento: Soma
+         C[i, j] <- A[i, j] + B[i, j]
+      fimpara
+   fimpara
+
+   // Saída de dados: Matriz C
+   escreval("--- Matriz Resultante C ---")
+   para i de 1 ate 5 faca
+      para j de 1 ate 3 faca
+         escreva(C[i, j]:4) // :4 serve para dar espaçamento
+      fimpara
+      escreval() // Pula linha ao fim de cada linha da matriz
+   fimpara
+fimalgoritmo
+
+
+//------ EXERCICIO 2 ----------//
+algoritmo "Unir Vetores em Matriz"
+var
+   A, B: vetor [1..7] de inteiro
+   C: vetor [1..7, 1..2] de inteiro
+   i: inteiro
+inicio
+   // Leitura dos vetores A e B
+   para i de 1 ate 7 faca
+      escreva("Digite o ", i, "o elemento de A: ")
+      leia(A[i])
+      escreva("Digite o ", i, "o elemento de B: ")
+      leia(B[i])
+      
+      // Processamento: Preencher as colunas da matriz C
+      C[i, 1] <- A[i]
+      C[i, 2] <- B[i]
+   fimpara
+
+   // Exibição da Matriz C
+   escreval("--- Matriz C (7x2) ---")
+   para i de 1 ate 7 faca
+      escreval(C[i, 1]:4, C[i, 2]:4)
+   fimpara
+fimalgoritmo
+
+//------------- EXERCICIO 3 ------------//
+algoritmo "Soma Diagonal Principal"
+var
+   A: vetor [1..4, 1..4] de inteiro
+   i, j, soma: inteiro
+inicio
+   soma <- 0
+   
+   // Leitura da Matriz 4x4
+   para i de 1 ate 4 faca
+      para j de 1 ate 4 faca
+         escreva("Digite o valor para A[", i, ",", j, "]: ")
+         leia(A[i, j])
+         
+         // Lógica: Se linha for igual a coluna, soma o elemento
+         se (i = j) entao
+            soma <- soma + A[i, j]
+         fimse
+      fimpara
+   fimpara
+
+   escreval("-----------------------------------")
+   escreval("A soma dos elementos da diagonal principal é:", soma)
+fimalgoritmo
+
+//--------- EXERCICIO 4 ----------//
+algoritmo "Matriz 3x4"
+var
+   M: vetor [1..3, 1..4] de inteiro
+   l, c: inteiro
+inicio
+   // Leitura dos 12 elementos
+   escreval("Preencha a matriz 3x4:")
+   para l de 1 ate 3 faca
+      para c de 1 ate 4 faca
+         escreva("Elemento [", l, ",", c, "]: ")
+         leia(M[l, c])
+      fimpara
+   fimpara
+
+   // Exibição da Matriz formatada
+   escreval()
+   escreval("--- Matriz Resultante ---")
+   para l de 1 ate 3 faca
+      para c de 1 ate 4 faca
+         escreva(M[l, c]:5)
+      fimpara
+      escreval() // Pula para a próxima linha
+   fimpara
+fimalgoritmo
