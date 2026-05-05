@@ -1,0 +1,256 @@
+//----------- EXERCICIO 1 -------------//
+algoritmo "Exercício 1 - Vetor 10 Posições"
+// Disciplina  : Algoritmos e Programação
+// Descrição   : Lê 10 números inteiros e os mostra na mesma ordem
+// Autor(a)    : Gemini
+// Data atual  : 04/05/2026
+
+var
+   numeros: vetor [1..10] de inteiro
+   i: inteiro
+
+inicio
+   // Passo 1: Leitura dos dados
+   para i de 1 ate 10 faca
+      escreva("Digite o ", i, "º número: ")
+      leia(numeros[i])
+   fimpara
+
+   escreval("")
+   escreval("--- Números Digitados ---")
+
+   // Passo 2: Exibição dos dados na mesma ordem
+   para i de 1 ate 10 faca
+      escreva(numeros[i], " ")
+   fimpara
+   
+   escreval("")
+
+fimalgoritmo
+
+//------------- EXERCICIO 2 -------------//
+algoritmo "Exercício 2 - Soma de Vetor Real"
+// Disciplina  : Algoritmos e Programação
+// Descrição   : Lê 5 números reais e mostra a soma total
+// Autor(a)    : Gemini
+// Data atual  : 04/05/2026
+
+var
+   valores: vetor [1..5] de real
+   soma: real
+   i: inteiro
+
+inicio
+   soma <- 0
+
+   // Passo 1: Leitura dos 5 números reais
+   para i de 1 ate 5 faca
+      escreva("Digite o ", i, "º número real: ")
+      leia(valores[i])
+      
+      // Já vamos somando conforme o usuário digita
+      soma <- soma + valores[i]
+   fimpara
+
+   // Passo 2: Exibição do resultado
+   escreval("")
+   escreval("A soma de todos os valores é: ", soma:5:2)
+
+fimalgoritmo
+
+//------------ EXERCICIO 3 ----------//
+algoritmo "Exercício 3 - Maior e Menor Valor"
+// Disciplina  : Algoritmos e Programação
+// Descrição   : Lê 8 números e identifica o maior e o menor
+// Autor(a)    : Gemini
+// Data atual  : 04/05/2026
+
+var
+   numeros: vetor [1..8] de inteiro
+   i, maior, menor: inteiro
+
+inicio
+   // Passo 1: Leitura dos dados
+   para i de 1 ate 8 faca
+      escreva("Digite o ", i, "º número: ")
+      leia(numeros[i])
+      
+      // Inicialização: Se for o primeiro número, ele é o maior e o menor
+      se (i = 1) entao
+         maior <- numeros[i]
+         menor <- numeros[i]
+      senao
+         // Comparação para achar o maior
+         se (numeros[i] > maior) entao
+            maior <- numeros[i]
+         fimse
+         
+         // Comparação para achar o menor
+         se (numeros[i] < menor) entao
+            menor <- numeros[i]
+         fimse
+      fimse
+   fimpara
+
+   // Passo 2: Exibição dos resultados
+   escreval("")
+   escreval("O MAIOR valor digitado foi: ", maior)
+   escreval("O MENOR valor digitado foi: ", menor)
+
+fimalgoritmo
+
+//------------- EXERCICIO 4 -----------//
+algoritmo "Exercício 4 - Vetor na Ordem Inversa"
+// Disciplina  : Algoritmos e Programação
+// Descrição   : Lê 6 números e os exibe de trás para frente
+// Autor(a)    : Gemini
+// Data atual  : 04/05/2026
+
+var
+   numeros: vetor [1..6] de inteiro
+   i: inteiro
+
+inicio
+   // Passo 1: Leitura dos 6 números
+   para i de 1 ate 6 faca
+      escreva("Digite o ", i, "º número: ")
+      leia(numeros[i])
+   fimpara
+
+   escreval("")
+   escreval("--- Vetor na Ordem Inversa ---")
+
+   // Passo 2: Exibição começando do último índice (6) até o primeiro (1)
+   para i de 6 ate 1 passo -1 faca
+      escreva(numeros[i], " ")
+   fimpara
+   
+   escreval("")
+
+fimalgoritmo
+
+//------------ EXERCICIO 5 -----------//
+algoritmo "Exercício 4 - Vetor na Ordem Inversa"
+// Disciplina  : Algoritmos e Programação
+// Descrição   : Lê 6 números e os exibe de trás para frente
+// Autor(a)    : Gemini
+// Data atual  : 04/05/2026
+
+var
+   numeros: vetor [1..6] de inteiro
+   i: inteiro
+
+inicio
+   // Passo 1: Leitura dos 6 números
+   para i de 1 ate 6 faca
+      escreva("Digite o ", i, "º número: ")
+      leia(numeros[i])
+   fimpara
+
+   escreval("")
+   escreval("--- Vetor na Ordem Inversa ---")
+
+   // Passo 2: Exibição começando do último índice (6) até o primeiro (1)
+   para i de 6 ate 1 passo -1 faca
+      escreva(numeros[i], " ")
+   fimpara
+   
+   escreval("")
+
+fimalgoritmo
+
+///-------- EXERCICIO 6 -------------//
+algoritmo "Exercício 6 - Matriz 3x3"
+var
+   mat: vetor [1..3, 1..3] de inteiro
+   l, c: inteiro
+inicio
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         escreva("Digite valor para [", l, ",", c, "]: ")
+         leia(mat[l,c])
+      fimpara
+   fimpara
+   escreval("--- Matriz Formatada ---")
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         escreva(mat[l,c]:4) // :4 dá um espaçamento entre os números
+      fimpara
+      escreval("") // Pula linha ao fim de cada linha da matriz
+   fimpara
+fimalgoritmo
+//----------- EXERCICIO 7 ---------//
+algoritmo "Exercício 7 - Soma Matriz 2x2"
+var
+   mat: vetor [1..2, 1..2] de inteiro
+   l, c, soma: inteiro
+inicio
+   soma <- 0
+   para l de 1 ate 2 faca
+      para c de 1 ate 2 faca
+         escreva("Valor [", l, ",", c, "]: ")
+         leia(mat[l,c])
+         soma <- soma + mat[l,c]
+      fimpara
+   fimpara
+   escreval("A soma de todos os elementos é: ", soma)
+fimalgoritmo
+//--------- EXERCICIO 8 ----------//
+algoritmo "Exercício 8 - Diagonal Principal"
+var
+   mat: vetor [1..3, 1..3] de inteiro
+   l, c, somaDiag: inteiro
+inicio
+   somaDiag <- 0
+   para l de 1 ate 3 faca
+      para c de 1 ate 3 faca
+         escreva("Valor [", l, ",", c, "]: ")
+         leia(mat[l,c])
+         se (l = c) entao
+            somaDiag <- somaDiag + mat[l,c]
+         fimse
+      fimpara
+   fimpara
+   escreval("Soma da diagonal principal: ", somaDiag)
+fimalgoritmo
+//--------- EXERCICIO 9 -----------//
+algoritmo "Exercício 9 - Maior Valor Matriz"
+var
+   mat: vetor [1..4, 1..4] de inteiro
+   l, c, maior: inteiro
+inicio
+   para l de 1 ate 4 faca
+      para c de 1 ate 4 faca
+         escreva("Valor [", l, ",", c, "]: ")
+         leia(mat[l,c])
+         se (l = 1) e (c = 1) entao
+            maior <- mat[l,c]
+         senao
+            se (mat[l,c] > maior) entao
+               maior <- mat[l,c]
+            fimse
+         fimse
+      fimpara
+   fimpara
+   escreval("O maior valor encontrado foi: ", maior)
+fimalgoritmo
+//-------- EXERCICIO 10 ---------//
+algoritmo "Exercício 10 - Média por Linha"
+var
+   mat: vetor [1..3, 1..4] de real
+   l, c: inteiro
+   somaLinha, media: real
+inicio
+   para l de 1 ate 3 faca
+      somaLinha <- 0
+      escreval("--- Digite os valores da linha ", l, " ---")
+      para c de 1 ate 4 faca
+         escreva("Coluna ", c, ": ")
+         leia(mat[l,c])
+         somaLinha <- somaLinha + mat[l,c]
+      fimpara
+      media <- somaLinha / 4
+      escreval("Média da linha ", l, " é: ", media:5:2)
+      escreval("")
+   fimpara
+fimalgoritmo
